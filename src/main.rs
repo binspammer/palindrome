@@ -13,8 +13,11 @@ pub fn is_palindrome(n: u32) -> bool {
 }
 
 ///
-pub fn first_n_palindromes(n: u32) -> Vec<u32> {
-    (0..n).filter(|x| is_palindrome(*x)).collect::<Vec<u32>>()
+pub fn first_n_palindromes(n: usize) -> Vec<u32> {
+    (0..)
+        .filter(|x| is_palindrome(*x))
+        .take(n)
+        .collect::<Vec<u32>>()
 }
 
 ///
@@ -23,7 +26,7 @@ fn main() {
     let is_palindrome = is_palindrome(x);
     println!("{x} is a palindrome: {is_palindrome}");
 
-    let first_10_palindromes = first_n_palindromes(30);
+    let first_10_palindromes = first_n_palindromes(10);
 
     for x in first_10_palindromes {
         println!("{x} is a palindrome");
