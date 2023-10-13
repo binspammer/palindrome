@@ -14,8 +14,7 @@ pub fn is_palindrome(n: u32) -> bool {
 
 ///
 pub fn first_n_palindromes(n: u32) -> Vec<u32> {
-    let v = (0..n).filter(|x| is_palindrome(*x)).collect::<Vec<u32>>();
-    v
+    (0..n).filter(|x| is_palindrome(*x)).collect::<Vec<u32>>()
 }
 
 ///
