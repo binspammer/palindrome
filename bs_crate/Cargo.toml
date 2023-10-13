@@ -1,0 +1,13 @@
+[package]
+name = "bs_crate"
+version = "0.1.5"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/binspammer/palindrome.git"
+description = "The palindrome numbers library"
+autotests = false
+autobenches = false
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
