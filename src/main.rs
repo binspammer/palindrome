@@ -13,14 +13,9 @@ pub fn is_palindrome(n: u32) -> bool {
 }
 
 ///
-pub fn first_n_palindromes(n: u32) -> Vec<String> {
-    let mut palindromes: Vec<String> = Vec::new();
-    for i in 1..n {
-        if is_palindrome(i) {
-            palindromes.push(i.to_string());
-        }
-    }
-    palindromes
+pub fn first_n_palindromes(n: u32) -> Vec<u32> {
+    let v = (0..n).filter(|x| is_palindrome(*x)).collect::<Vec<u32>>();
+    v
 }
 
 ///
