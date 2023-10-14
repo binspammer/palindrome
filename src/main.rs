@@ -14,14 +14,16 @@ pub fn is_palindrome(n: u32) -> bool {
 }
 
 ///
-pub fn first_n_palindromes(mut n: u32) -> Vec<u32> {
-    if n > SEQ_A070199_1M_NUMBER {
-        println!( "With {} numbers the palindrome number will exceed 1,000,000 limit.\nSo we only provide the numbers below that.", n);
-        n = SEQ_A070199_1M_NUMBER;
-    }
+pub fn first_n_palindromes(n: u32) -> Vec<u32> {
     (0..MAX_LIMIT_NUMBER)
         .filter(|x| is_palindrome(*x))
-        .take(n as usize)
+        .take(
+            if n > SEQ_A070199_1M_NUMBER {
+                println!( "With {} numbers the palindrome number will exceed 1,000,000 limit.\nSo we only provide the numbers below that.", n);
+                SEQ_A070199_1M_NUMBER
+            } else {
+                n
+            } as usize)
         .collect()
 }
 
