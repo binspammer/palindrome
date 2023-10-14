@@ -12,6 +12,14 @@ pub fn is_palindrome(n: u32) -> bool {
 }
 
 ///
+pub fn is_palindrome1(n: u32) -> bool {
+    let num = n.to_string();
+    let front = num.chars();
+    let back = front.clone().rev();
+    front.eq(back)
+}
+
+///
 pub fn first_n_palindromes(n: usize) -> Vec<u32> {
     (0..).filter(|x| is_palindrome(*x)).take(n).collect()
 }
@@ -26,4 +34,12 @@ fn main() {
     for x in first_10_palindromes {
         println!("{x} is a palindrome");
     }
+
+    println!("compare 2 itarators:");
+    let numb = 11;
+    let txt = numb.to_string();
+    let chrs = txt.chars();
+    let chrsrv = chrs.clone().rev();
+    let res = chrs.eq(chrsrv);
+    println!("{res}");
 }
